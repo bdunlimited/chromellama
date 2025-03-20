@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ChromeLlama",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A Chrome extension chatbot that connects to an Ollama server, with custom url and basic options.",
   "action": {
     "default_popup": "popup.html",
