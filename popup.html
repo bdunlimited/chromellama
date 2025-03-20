@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChromeLlama</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-content">
+        <h1>🦙 ChromeLlama</h1>
+        <div class="header-controls">
+          <button id="theme-toggle" class="icon-button" title="Toggle dark mode">🌓</button>
+          <button id="settings-toggle" class="icon-button" title="Toggle settings">⚙️</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="settings-panel" class="settings">
+      <h2>Settings</h2>
+      <div class="setting-item">
+        <label for="server-url">Ollama Server URL:</label>
+        <input type="text" id="server-url" placeholder="http://localhost:11434">
+      </div>
+      
+      <div class="setting-item">
+        <label for="model-select">Model:</label>
+        <select id="model-select">
+          <option value="" disabled selected>Select a model</option>
+          <!-- Models will be populated here -->
+        </select>
+        <button id="refresh-models">Refresh Models</button>
+        <div id="refresh-notification" class="button-notification"></div>
+      </div>
+      
+      <div class="setting-item">
+        <label for="temperature">Temperature:</label>
+        <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7">
+        <span id="temperature-value">0.7</span>
+      </div>
+      
+      <div class="setting-item">
+        <label for="num-ctx">Context Length (num_ctx):</label>
+        <input type="number" id="num-ctx" min="512" max="16384" step="512" value="4096">
+      </div>
+      
+      <div class="setting-item">
+        <label for="system-prompt">System Prompt:</label>
+        <textarea id="system-prompt" rows="3" placeholder="You are a helpful assistant..."></textarea>
+      </div>
+      
+      <button id="save-settings">Save Settings</button>
+      <div id="settings-notification" class="button-notification"></div>
+    </div>
+    
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat</h2>
+        <button id="clear-chat" class="secondary-button">Clear Chat</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div class="chat-input">
+        <textarea id="user-input" placeholder="Type your message here..."></textarea>
+        <button id="send-message" title="Send message"></button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
