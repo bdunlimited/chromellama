@@ -49,7 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
       sendMessage();
     }
   });
+
+  // Check for selected text from context menu
+  checkForSelectedText();
 });
+
+// Check if there's selected text from the background script
+function checkForSelectedText() {
+  chrome.runtime.sendMessage({ action: "getSelectedText" }, (response) => {
+    if (response && response.text) {
+      // Insert the text into the input field
+      userInput.value = response.text;
+      
+      // Focus the input field
+      userInput.focus();
+      
+      // Show a notification to the user
+      showNotification("Text from browser page added to chat input");
+    }
+  });
+}
 
 // Load settings from Chrome storage
 function loadSettings() {

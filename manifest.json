@@ -7,9 +7,13 @@
     "default_popup": "popup.html",
     "default_title": "ChromeLlama"
   },
+  "background": {
+    "service_worker": "background.js"
+  },
   "permissions": [
     "storage",
-    "webRequest"
+    "webRequest",
+    "contextMenus"
   ],
   "host_permissions": [
     "http://localhost:*/*",

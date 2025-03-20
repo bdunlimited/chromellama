@@ -52,6 +52,15 @@ OLLAMA_ORIGINS=chrome-extension://*
 - 💬 Chat history with option to clear
 - 🔧 Server connection settings
 - 🎯 Customizable system prompts
+- 📝 Send selected text from any webpage to the chat (right-click and choose "Send to ChromeLlama")
+
+## 📋 Using the Text Selection Feature
+
+1. Select text on any webpage
+2. Right-click on the selected text
+3. Choose "Send to ChromeLlama" from the context menu
+4. The extension popup will open with your selected text already inserted in the chat input
+5. Press the send button or Enter to send the query
 
 ## 📝 Note
 
